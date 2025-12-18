@@ -9,7 +9,7 @@ import { useAppStore } from '@/store/useAppStore';
 import { useApps } from '@/api/queries';
 
 const Index = () => {
-  const { selectedAppId, setSelectedAppId } = useAppStore();
+  const { selectedAppId, setSelectedAppId, selectedNodeId } = useAppStore();
   const { data: apps } = useApps();
 
   // Auto-select first app on load
@@ -30,7 +30,7 @@ const Index = () => {
           </main>
           <RightPanel />
         </div>
-        <MobileMenuButton />
+        {selectedNodeId && <MobileMenuButton />}
       </div>
     </ReactFlowProvider>
   );
