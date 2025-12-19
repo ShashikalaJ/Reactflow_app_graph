@@ -75,4 +75,4 @@ Server state (apps and graph data) is handled using TanStack Query.
 
 ```bash
 git clone https://github.com/ShashikalaJ/Reactflow_app_graph.git
-cd ReactFlow-Canvas
+cd Reactflow_app_graph
