@@ -7,36 +7,36 @@ Built as part of a frontend intern take-home task.
 
 ## 🚀 Tech Stack
 
-- React + Vite
-- TypeScript (strict mode)
-- ReactFlow (xyflow)
-- shadcn/ui
-- TanStack Query
-- Zustand
-- Tailwind CSS
+- React + Vite  
+- TypeScript (strict mode)  
+- ReactFlow (xyflow)  
+- shadcn/ui  
+- TanStack Query  
+- Zustand  
+- Tailwind CSS  
 
 ---
 
 ## ✨ Features
 
-- Dotted canvas with draggable service nodes
-- Zoom, pan, and fit-view support
-- App selector with multiple applications
-- Node inspector with status, tabs, and synced slider/input
-- Responsive layout with mobile slide-over panel
-- Mock API integration using TanStack Query
-- Global UI state managed with Zustand
+- Dotted canvas with draggable service nodes  
+- Zoom, pan, and fit-view support  
+- Application selector with multiple apps  
+- Node inspector with status, tabs, and synced slider/input  
+- Responsive layout with mobile slide-over panel  
+- Mock API integration using TanStack Query  
+- Global UI state managed with Zustand  
 
 ---
 
 ## 🧱 Layout Structure
 
-- **Top Bar**: App selector, actions, and fit-view button
-- **Left Rail**: Static icon navigation
-- **Center Canvas**: ReactFlow graph with dotted background
+- **Top Bar**: App selector, actions, and fit-view button  
+- **Left Rail**: Static icon navigation  
+- **Center Canvas**: ReactFlow graph with dotted background  
 - **Right Panel**:
-  - App list
-  - Node inspector (visible on node selection)
+  - Application list  
+  - Node inspector (visible on node selection)  
 
 ---
 
@@ -44,14 +44,15 @@ Built as part of a frontend intern take-home task.
 
 Mock APIs are used to simulate backend behavior:
 
-- `GET /apps` – fetch list of applications
-- `GET /apps/:appId/graph` – fetch nodes and edges for selected app
+- `GET /apps` – fetch list of applications  
+- `GET /apps/:appId/graph` – fetch nodes and edges for the selected app  
 
-Features:
-- Simulated network latency
-- Loading and error states
-- Cached responses per app
-- Automatic refetch on app change
+### Highlights
+
+- Simulated network latency  
+- Loading and error states  
+- Cached responses per application  
+- Automatic refetch on app change  
 
 ---
 
@@ -59,18 +60,19 @@ Features:
 
 Zustand is used for non-server UI state:
 
-- selectedAppId
-- selectedNodeId
-- isMobilePanelOpen
-- activeInspectorTab
+- `selectedAppId`  
+- `selectedNodeId`  
+- `isMobilePanelOpen`  
+- `activeInspectorTab`  
 
-Server state (apps, graph data) is handled by TanStack Query.
+Server state (apps and graph data) is handled using TanStack Query.
 
 ---
 
-## 🛠 Setup Instructions
+## 🛠 Running the Project Locally
 
-### 1. Clone repository
+### 1. Clone the repository
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/ReactFlow-Canvas.git
+git clone https://github.com/ShashikalaJ/Reactflow_app_graph.git
 cd ReactFlow-Canvas
