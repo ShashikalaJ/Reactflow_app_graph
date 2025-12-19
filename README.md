@@ -1,68 +1,76 @@
-# Welcome to your ReactFlow-Canvas project
+# ReactFlow Canvas – App Graph Builder
 
-## Project info
+A small frontend application that visualizes application service dependencies using ReactFlow.  
+Built as part of a frontend intern take-home task.
 
-**URL**:[https://github.com/keerthibk0228/ReactFlow-Canvas.git]
+---
 
-## How can I edit this code?
+## 🚀 Tech Stack
 
-There are several ways of editing your application.
-
-**Use vs tool**
-
-Simply visit the ([https://github.com/keerthibk0228/ReactFlow-Canvas.git]) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <https://github.com/keerthibk0228/ReactFlow-Canvas.git>
-
-# Step 2: Navigate to the project directory.
-cd <ReactFlow-Canvas>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+- React + Vite
+- TypeScript (strict mode)
+- ReactFlow (xyflow)
+- shadcn/ui
+- TanStack Query
+- Zustand
 - Tailwind CSS
 
-## How can I deploy this project?
+---
 
-Simply open ([https://github.com/keerthibk0228/ReactFlow-Canvas.git]) and click on Share -> Publish.
+## ✨ Features
 
+- Dotted canvas with draggable service nodes
+- Zoom, pan, and fit-view support
+- App selector with multiple applications
+- Node inspector with status, tabs, and synced slider/input
+- Responsive layout with mobile slide-over panel
+- Mock API integration using TanStack Query
+- Global UI state managed with Zustand
 
+---
 
+## 🧱 Layout Structure
+
+- **Top Bar**: App selector, actions, and fit-view button
+- **Left Rail**: Static icon navigation
+- **Center Canvas**: ReactFlow graph with dotted background
+- **Right Panel**:
+  - App list
+  - Node inspector (visible on node selection)
+
+---
+
+## 🔄 Data Fetching (TanStack Query)
+
+Mock APIs are used to simulate backend behavior:
+
+- `GET /apps` – fetch list of applications
+- `GET /apps/:appId/graph` – fetch nodes and edges for selected app
+
+Features:
+- Simulated network latency
+- Loading and error states
+- Cached responses per app
+- Automatic refetch on app change
+
+---
+
+## 🧠 State Management (Zustand)
+
+Zustand is used for non-server UI state:
+
+- selectedAppId
+- selectedNodeId
+- isMobilePanelOpen
+- activeInspectorTab
+
+Server state (apps, graph data) is handled by TanStack Query.
+
+---
+
+## 🛠 Setup Instructions
+
+### 1. Clone repository
+```bash
+git clone https://github.com/YOUR_USERNAME/ReactFlow-Canvas.git
+cd ReactFlow-Canvas

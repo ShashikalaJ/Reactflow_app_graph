@@ -1,4 +1,5 @@
 import { ChevronDown, ChevronUp, MoreHorizontal, Share2, Sun, Moon, User } from 'lucide-react';
+import { useReactFlow } from '@xyflow/react';
 import { Button } from '@/components/ui/button';
 import {
   Popover,
@@ -14,6 +15,8 @@ export function TopBar() {
   const { selectedAppId } = useAppStore();
   const { data: apps } = useApps();
   const [isOpen, setIsOpen] = useState(false);
+  const { fitView } = useReactFlow();
+
   
   const selectedApp = apps?.find((app) => app.id === selectedAppId);
 
@@ -31,15 +34,15 @@ export function TopBar() {
             <Button variant="ghost" className="gap-2 px-3 h-9">
               {selectedApp && (
                 <span 
-                  className="w-5 h-5 rounded flex items-center justify-center text-xs"
+                  className="text-sm font-semibold tracking-tight"
                   style={{ backgroundColor: selectedApp.color }}
                 >
                   {selectedApp.icon}
                 </span>
               )}
               <span className="font-medium">
-                {selectedApp?.name || 'Select App'}
-              </span>
+                {selectedApp?.name || 'Choose Application'}
+                </span>
               {isOpen ? (
                 <ChevronUp className="w-4 h-4 text-muted-foreground" />
               ) : (
@@ -63,6 +66,13 @@ export function TopBar() {
       
       {/* Right actions */}
       <div className="flex items-center gap-2">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => fitView()}
+        >
+        Fit View
+        </Button>
         <Button variant="ghost" size="icon" className="h-9 w-9">
           <Share2 className="w-4 h-4" />
         </Button>
